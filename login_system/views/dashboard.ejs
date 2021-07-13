@@ -1,12 +1,15 @@
 <%-include('header')-%>
 
-<idv class="text-center center-div mt-5" id="login">
+<form action="/route/upload" method="POST" class="pt-3" enctype="multipart/form-data">
+<div class="text-center center-div mt-5" id="login">
     <div class="container w-25 border py-5 mt-5">
         <h3>Welcome to College notes</h3>
         <h5><%= locals.user? user:"User"%></h5>
         <a href="/register">Logout</a>
     </div>
-
-</idv>
+    <input type="file" name="files" multiple />
+    <button type="submit" class="btn-upload" >Upload</button>
+</div>
+</form>
 
 <%-include('footer')-%>

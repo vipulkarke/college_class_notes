@@ -2,6 +2,8 @@ const e = require("express");
 var express  = require("express");
 const connection = require("./db");
 var router = express.Router();
+const multer = require('multer');
+var fs = require("fs");
 
 
 // const credential={
@@ -62,5 +64,31 @@ router.post('/register',(req,res)=>{
 });
 
 
+//routeforupload
+var storage = multer.diskStorage({
+    destination: function(req, file,callback){
+        var dir = "./upload";
+
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir);
+        }
+        callback(null,dir);
+    },
+    filename:function(req,file,callback){
+        callback(null,file.originalname);
+    }
+});
+
+var upload = multer({storage:storage}).array('files',20);
+router.post('/upload',(req,res,next)=>{
+    upload(req,res,function(err){
+    if(err){
+        return res.send("something went wrong ");  
+    }
+    console.log("file uploaded")
+    res.send("upload complete");
+    console.log("file uploaded")
+ })
+});
 
 module.exports=router;
