@@ -1,0 +1,29 @@
+<%-include('header')-%>
+    
+
+<div class="text-center center-div" id="login">
+    <div class="container w-25 boder py-5">
+        <div class="title">
+            <h2 class="font-width-bold">Login System</h2>
+            <span>Log in for the existing user</span>   
+        </div>
+        <form action="/route/login" method="POST" class="pt-3" >
+            <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" name="email">
+            <small class="form-text text-muted text-left">Registered email address</small>  
+            </div>
+            <div class="from-group">
+                <input type="password" class="form-control" placeholder="Password" name="password">  
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+
+            <div class="container signin">
+                <p>Already have an account? <a href="/register">Register here!</a>.</p>
+              </div>
+
+        </form>
+    </div>
+</div>
+
+
+<%-include('footer')-%>
