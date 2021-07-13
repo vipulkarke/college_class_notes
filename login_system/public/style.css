@@ -23,3 +23,9 @@ form{
 #login.title>span{
     font-size: .8;
 }
+
+
+.btn-upload{
+    margin: 20px;
+    padding: .4em 2em;
+}

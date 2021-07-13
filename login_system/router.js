@@ -5,7 +5,7 @@ var router = express.Router();
 const multer = require('multer');
 var fs = require("fs");
 
-
+//tupple for login
 // const credential={
 //     email:"admin@gmail.com",
 //     password:"admin"
@@ -31,7 +31,7 @@ connection.connect(function(err) {
   });
 });
 
-// login user 
+// user login using tupple 
 // router.post('/login',(req,res)=>{
 //     if(req.body.email == credential.email && req.body.password == credential.password){
 //         req.session.user = req.body.email;
