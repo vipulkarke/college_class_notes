@@ -2,6 +2,7 @@ body{
     background-image: url('assets/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 0;
 }
 
 
@@ -14,12 +15,6 @@ body{
     padding: .4em 2em;
 }
 
-
-form{
-    padding: 03em;
-
-}
-
 #login.title>span{
     font-size: .8;
 }
@@ -29,3 +24,49 @@ form{
     margin: 20px;
     padding: .4em 2em;
 }
+
+
+#logout{
+    position: absolute;
+    right: 50px;
+}
+.showemail{
+    position: absolute;
+    right: 150px;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    margin-top: 0;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #04AA6D;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
