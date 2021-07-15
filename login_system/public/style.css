@@ -70,3 +70,58 @@ body{
   .topnav .icon {
     display: none;
   }
+
+
+
+  /***************Style for Login page***************/
+
+  /* .form-box{
+    width: 380px;
+    height:480px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+} */
+
+.input-field{
+   width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.registerbtn{
+    display: block;
+    margin: 20px;
+    padding: .4em 2em;
+    color: #fff;
+    background-color: #198754;
+    text-align: start;
+    text-decoration: none;
+    vertical-align: middle;
+    border-radius: .25rem;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+     
+} 
+
+.registerbtn:hover
+{
+background-image:none;
+background-color: hsl(152deg 69% 27%);
+}
+.container{
+  text-align: start;
+  position: relative;
+}
+.registerL{
+  text-align: center;
+  
+}
