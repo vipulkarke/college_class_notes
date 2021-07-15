@@ -1,12 +1,13 @@
 <%-include('header')-%>
 
-<form action="/route/upload" method="POST" class="pt-3" enctype="multipart/form-data">
+
+<form action="/route/showfiles" method="POST" class="pt-3" enctype="multipart/form-data">
     <div class="topnav" id="myTopnav">
         <a href="#home" class="active">Home</a>
         <a href="#news">Upload</a>
         <a href="/showfiles">Show Files</a>
         <a href="#about">About</a>
-        <h5 class="showemail"><%=locals.user? user:"User"%></h5>
+        <h5 class="showemail"><%= locals.user? user:"User"%></h5>
         <a id="logout" href="/register">Logout</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
@@ -15,10 +16,10 @@
 <div class="text-center center-div mt-5" id="login">
     <div class="container w-25 border py-5 mt-5">        
         <h3>Welcome to College notes</h3>
-    </div>
-    <input type="file" name="files" multiple />
-    <button type="submit" class="btn-upload" >Upload</button>
+        <button type="submit">showfiles</button>
+    </div>  
 </div>
 </form>
+
 
 <%-include('footer')-%>

@@ -3,7 +3,9 @@ var express  = require("express");
 const connection = require("./db");
 var router = express.Router();
 const multer = require('multer');
-var fs = require("fs");
+const fs = require("fs");
+var uuid = require('uuid')
+var alert = require("alert");
 
 //tupple for login
 // const credential={
@@ -85,10 +87,39 @@ router.post('/upload',(req,res,next)=>{
     if(err){
         return res.send("something went wrong ");  
     }
-    console.log("file uploaded")
-    res.send("upload complete");
-    console.log("file uploaded")
+     alert('upload complete');
+    res.render('dashboard',{user:req.session.user});
  })
 });
+
+
+
+
+// router.get('/showfiles',(req,res)=>{
+//     res.render('showfiles')
+// });
+
+router.post('/showfiles',(req,res,next)=>{
+    // res.render('showfiles',{user:req.session.user});
+let directory_name = "./upload";
+
+// Function to get current filenames
+// in directory
+let filenames = fs.readdirSync(directory_name);
+
+console.log("\nFilenames in directory:");
+filenames.forEach((file) => {
+    req.file
+    res.write('<html><head></head><body><table><tr>  ' +file);
+    res.write('</tr>        </table>    </body>    </html>');           
+    console.log("File:", file);
+    console.log("File:", file);
+});
+});
+
+//new route for upload files and images
+
+
+
 
 module.exports=router;

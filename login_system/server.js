@@ -49,4 +49,12 @@ app.get('/register',(req,res)=>{
     res.render('register',{title:"Register System"})
 })
 
+
+app.get('/showfiles',(req,res)=>{
+    res.render('showfiles')
+})
+
+
+
+
 app.listen(port,()=>{console.log("Listning to the server on hhtp://localhost:3000")}); 
