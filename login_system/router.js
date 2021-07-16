@@ -87,8 +87,8 @@ router.post('/upload',(req,res,next)=>{
     if(err){
         return res.send("something went wrong ");  
     }
-     alert('upload complete');
-    res.render('dashboard',{user:req.session.user});
+     res.render('uploadfiles',{user:req.session.user});
+     alert('upload complete');    
  })
 });
 
@@ -99,7 +99,7 @@ router.post('/upload',(req,res,next)=>{
 //     res.render('showfiles')
 // });
 
-router.post('/showfiles',(req,res,next)=>{
+router.post('/show',(req,res,next)=>{
     // res.render('showfiles',{user:req.session.user});
 let directory_name = "./upload";
 
