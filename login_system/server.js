@@ -55,7 +55,7 @@ app.get('/showfiles',(req,res)=>{
 })
 
 app.get('/uploadfiles',(req,res)=>{
-    res.render('uploadfiles')
+    res.render('uploadfiles',)
 })
 
 // app.get('/dashbaord',(req,res)=>{
