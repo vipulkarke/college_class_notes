@@ -2,11 +2,27 @@
 
 <%-include('dashboard')-%>
 <form action="/route/show" method="POST" class="pt-3" enctype="multipart/form-data">  
-<div class="text-center center-div mt-5" id="login">     
-        <button type="submit">showfiles</button>   
-    </div>  
+<div class="text-center center-div mt-5" id="login">              
+    </div> 
+    <div class="images"></div>
     
-</div>
+    <script>
+        const loadImages = async() => {
+            const response = await fetch('http://localhost:3000/route/images').then(response => response.json());
+            const imagesElement = document.querySelector('.images');
+            imagesElement.innerHTML = '';
+            response.images.forEach(image => {
+                const img = document.createElement('img');
+                img.src= image.filePath;
+                img.height = '200';
+                imagesElement.appendChild(img);
+                 console.log(image);
+            });
+        };
+        console.log(loadImages);
+        window.onload = loadImages;
+    </script>
+
 </form>
 
 

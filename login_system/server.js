@@ -22,8 +22,9 @@ app.use(bodyparser.urlencoded({extended:true}))
 app.set("views",path.join(__dirname,'views'))
 app.set("view engine","ejs")
 
+app.use('/images',express.static(path.join(__dirname,'uploads/images')))
 
-//load static assets
+// load static assets
 app.use('/static',express.static(path.join(__dirname,'public')))
 app.use('/assets',express.static(path.join(__dirname,'public/assets')))
 
@@ -57,6 +58,11 @@ app.get('/showfiles',(req,res)=>{
 app.get('/uploadfiles',(req,res)=>{
     res.render('uploadfiles',)
 })
+
+// app.get('/images',(req,res)=>{
+// });
+
+
 
 // app.get('/dashbaord',(req,res)=>{
 //     res.render('dashboard')

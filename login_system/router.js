@@ -4,12 +4,73 @@ const connection = require("./db");
 var router = express.Router();
 const multer = require('multer');
 const fs = require("fs");
-var uuid = require('uuid')
+var uuid = require('uuid').v4;
 var alert = require("alert");
+const  mongoose = require('mongoose');
+const path = require("path");
+
+
+mongoose.connect('mongodb://localhost:27017/userfiles?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false',{
+    useNewUrlParser: true, useUnifiedTopology:true
+});
+
+const mongoosedb = mongoose.connection;
+console.log("mongoose db connected");
+mongoosedb.on('error',console.log);
+
+
+//////////////////////////////////////////////////multer file uploads///////////////////////////////////////////////
+const Schema = mongoose.Schema;
+
+const ImageSchema = new mongoose.Schema (
+    {
+        filePath: String,
+    },
+    {
+        timestamps: true,
+    },
+);
+
+const Image = mongoose.model('Image',ImageSchema);
+console.log("error",Image);
+const storage = multer.diskStorage({
+    destination: (req, file, cb) =>{
+        cb(null,'uploads');
+},
+    filename:(req,file,cb) =>{
+        const ext = path.extname(file.originalname);
+        const id = uuid();
+        const filePath = `images/${id}${ext}`;
+        Image.create({filePath})
+            .then(()=>{
+                cb(null, filePath)
+            });     
+    }
+});
+const upload = multer({storage})
+// router.use('/static',express.static(path.join(__dirname,'/uploads')));
+
+//router.use('/static',express.static(path.join(__dirname,'uploads')))
+router.use('/images',express.static(path.join(__dirname,'uploads/images')))
+
+console.log(__dirname)
+router.get('/images',(req,res)=>{
+    Image.find().then((images)=>{
+        // console.log("show",images);
+        return res.json({status: 'OK', images });
+    });
+});
+
+
+router.post('/upload', upload.array('mfiles'),(req,res)=> {
+    return res.json({status: 'OK', uploaded: req.files.length})
+});
 
 
 
-//logincheck
+
+
+///////////////////////////////////////////////////////////////logincheck///////////////////////////////////////////////////////////
 router.post('/login',(req,res)=>{
 connection.connect(function(err) {
     var email = req.body.email;
@@ -28,7 +89,7 @@ connection.connect(function(err) {
   });
 });
 
-// route for dashboard
+////////////////////////////////////////////////////////////////// route for dashboard//////////////////////////////////////////////
 router.get('/dashboard',(req,res)=>{
  if(req.session.user){
      res.render('dashboard',{user:req.session.user});
@@ -37,7 +98,7 @@ router.get('/dashboard',(req,res)=>{
  }
 });
 
-// //route for register 
+//////////////////////////////////////////////////////////////////////route for register//////////////////////////////////////////// 
 router.post('/register',(req,res)=>{    
         // console.log("Connected!");
         console.log(req.body.username);
@@ -51,43 +112,39 @@ router.post('/register',(req,res)=>{
 
 
 //routeforupload
-var storage = multer.diskStorage({
-    destination: function(req, file,callback){
-        var dir = "./upload";
-        if (!fs.existsSync(dir)){
-            fs.mkdirSync(dir);
-        }
-        callback(null,dir);
-    },
-    filename:function(req,file,callback){
-        callback(null,file.originalname);
-    }
-});
-var upload = multer({storage:storage}).array('files',20);
+// var storage = multer.diskStorage({
+//     destination: function(req, file,callback){
+//         var dir = "./upload";
+//         if (!fs.existsSync(dir)){
+//             fs.mkdirSync(dir);
+//         }
+//         callback(null,dir);
+//     },
+//     filename:function(req,file,callback){
+//         callback(null,file.originalname);
+//     }
+// });
+// var upload = multer({storage:storage}).array('files',20);
+// router.post('/upload',(req,res,next)=>{
+//     upload(req,res,function(err){
+//     if(err){
+//         return res.send("something went wrong ");  
+//     }
+//      res.render('uploadfiles',{user:req.session.user});
+//      alert('upload complete');    
+//  })
+// });
 
 
-router.post('/upload',(req,res,next)=>{
-    upload(req,res,function(err){
-    if(err){
-        return res.send("something went wrong ");  
-    }
-     res.render('uploadfiles',{user:req.session.user});
-     alert('upload complete');    
- })
-});
-
-
-
-//Route for showfiles
+////////////////////////////////////////////////////////////////Route for showfiles///////////////////////////////////////////////
 router.post('/show',(req,res,next)=>{
     // res.render('showfiles',{user:req.session.user});
     // console.log(user.session.user);
-let directory_name = "./upload";
+let directory_name = "./uploads/images";
 let filenames = fs.readdirSync(directory_name);
 console.log("\nFilenames in directory:");
 filenames.forEach((file) => {
-        req.file
-          
+        req.file          
     res.write('   <html>    <head>     </head>   <body>             <table><tr>  ' +file );
     res.write('</tr>        </table>    </body>    </html>');           
     console.log("File:", file);   
