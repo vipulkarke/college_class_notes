@@ -80,8 +80,8 @@ router.post('/upload',(req,res,next)=>{
 
 //Route for showfiles
 router.post('/show',(req,res,next)=>{
-    res.render('showfiles',{user:req.session.user});
-    console.log(user.session.user);
+    // res.render('showfiles',{user:req.session.user});
+    // console.log(user.session.user);
 let directory_name = "./upload";
 let filenames = fs.readdirSync(directory_name);
 console.log("\nFilenames in directory:");
