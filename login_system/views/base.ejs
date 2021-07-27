@@ -1,31 +1,200 @@
 <%-include('header')-%>
     
+<head>
+    <meta charset="utf-8">
+    <title>TinDog</title>
+    
+    
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  
+  
+    <script src="https://kit.fontawesome.com/4b8a73297e.js" crossorigin="anonymous"></script>
+  </head>
+ 
+<section id="title">
+    <div class="container-fluid" style="padding-top: 0;">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <img class="navLogo" src="assets/finalLogo.png" alt="" style="width: 12%;">
+        <a class="navbar-brand" href="">College ClassNotes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="">Contact</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Login
+            </a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="">Register</a>
+               
+          </li>
+        </ul>
+      </div>
+      </nav>
 
-<div class="text-center center-div" id="login">
-    <div class="container w-25 boder py-5">
-        <div class="title">
-            <h2 class="font-width-bold">Login System</h2>
-            <span">Log in for the existing user</span>   
-        </div>
-        <form action="/route/login" method="POST" class="pt-3" >
-            <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email" name="email">
-            <small class="form-text text-muted text-left">Enter Registered email address</small>  
-            </div>
-            <div class="from-group">
-                <input type="password" class="form-control" placeholder="Password" name="password"> 
-                <small class="form-text text-muted text-left">Enter Password</small> 
-            </div>
-            <div>
-            <button type="submit" class="btn btn-success">Login</button>
-        </div>
-            <div class="container signin">
-                <p>Already have an account? <a href="/register">Register here!</a>.</p>
-              </div>
+  <!-- -------------------Collaps------------------------- -->
 
-        </form>
+  
+
+  <div class="collapse" id="collapseExample">
+    <div class="div1 card card-body" 
+                    style=" padding-top: 0px;
+                    padding-right: 0px;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    border-top-width: 0px;
+                    border-bottom-width: 0px;"> 
+
+      <div class="div2 text-center center-div" id="login">
+        <div class="container w-25 boder py-5">
+            <div class="title">
+                <h2 class="font-width-bold">Login System</h2>
+                <span">Log in for the existing user</span>   
+            </div>
+            <form action="/route/login" method="POST" class="pt-3" >
+                <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" name="email">
+                <small class="form-text text-muted text-left">Enter Registered email address</small>  
+                </div>
+                <div class="from-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password"> 
+                    <small class="form-text text-muted text-left">Enter Password</small> 
+                </div>
+                <div>
+                <button type="submit" class="btn btn-success">Login</button>
+                </div>
+                <div class="container signin">
+                    <p>Already have an account? <a href="/register">Register here!</a>.</p>
+                 </div>
+    
+            </form>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
+      <!-- Title -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="mainHL">College ClassNotes. <br><span style="font-family: ubuntu; font-weight: 500; color: antiquewhite;">Be educated and let other's be educated.</span> </h1>
+          <!-- <img class="finalLogo" src="assets/finalLogo.png" alt=""> -->
+          
+          <button class="btn-dn btn btn-dark btn-lg download-btn" type="button"><i class="fab fa-apple"></i> Download</button>
+          <button class="btn-dn btn btn-outline-light btn-lg download-btn" type="button"><i class="fab fa-google-play"></i> Download</button>
+        </div>
+        <div class="col-lg-6">
+
+            <img class="finalLogo" src="assets/iphone6.png" alt="" style="width: 40%;transform: rotate(17deg);"> 
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="row">
+      <div class="col-lg-4">
+        <i class="fas fa-check-circle ift"></i>
+        <h3>Easy to use.</h3>
+        <p>Easy to use and easy to share.  </p>
+      </div>
+      <div class="col-lg-4">
+        <i class="fas fa-bullseye ift"></i>
+        <h3>Target</h3>
+        <p>Target your goals with College ClassNotes.</p>
+      </div>
+      <div class="col-lg-4">
+        <i class="fas fa-heart ift"></i>
+        <h3>Stay Connected.</h3>
+        <p>Share knowledge with your classmates.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section id="testimonials">
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2>Review 1</h2>
+    <img class= "t-img" src="images.jpg" alt="profile1">
+    <em class="imt-t">Person1</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Review 2</h2>
+    <img class="testimonial-image t-img" src="images.jpg" alt="profile2">
+    <em class="imt-t">Person2</em>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    
+
+    
+
+  </section>
+
+
+  <!-- Press -->
+
+  <section id="press">
+    <img class="press-img" src="assets/techcrunch.png" alt="tc-logo">
+    <img class="press-img" src="assets/tnw.png" alt="tnw-logo">
+    <img class="press-img" src="assets/bizinsider.png" alt="biz-insider-logo">
+    <img class="press-img" src="assets/mashable.png" alt="mashable-lassets
+  </section>
+
+
+ 
+  
+
+ 
+
+
+  <!-- Footer -->
+
+  <footer id="footer">
+
+    <p style="color: black;">© Copyright 2021 College ClassNotes</p>
+
+  </footer>
+
+
+
+ 
 
 <%-include('footer')-%>
