@@ -138,7 +138,7 @@ background-image:none;
 background-color: hsl(152deg 69% 27%);
 }
 .container{
-  text-align: start;
+  text-align: center;
   position: relative;
 }
 .registerL{
@@ -171,6 +171,28 @@ background-color: hsl(152deg 69% 27%);
 .btn-dn{
   
 }
+
+.login{
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /********************** TinDOg CSS ***************************/
 
 #title{

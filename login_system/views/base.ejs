@@ -7,9 +7,7 @@
     
   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     
     <link rel="stylesheet" href="css/styles.css">
   
@@ -37,7 +35,7 @@
                 <a class="nav-link" href="">Contact</a>
               </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link" data-toggle="collapse"  href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 Login
             </a>
           </li>
@@ -68,23 +66,24 @@
       <div class="div2 text-center center-div" id="login">
         <div class="container w-25 boder py-5">
             <div class="title">
-                <h2 class="font-width-bold">Login System</h2>
-                <span">Log in for the existing user</span>   
+              <i class="far fa-user " style="font-size: 3rem;"></i>
+                <h2 class="font-width-bold login">Login</h2>
+                <span style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter;">Welcome to College ClassNotes</span>   
             </div>
             <form action="/route/login" method="POST" class="pt-3" >
                 <div class="form-group">
                 <input type="email" class="form-control" placeholder="Email" name="email">
-                <small class="form-text text-muted text-left">Enter Registered email address</small>  
+                
                 </div>
                 <div class="from-group">
                     <input type="password" class="form-control" placeholder="Password" name="password"> 
-                    <small class="form-text text-muted text-left">Enter Password</small> 
+                   
                 </div>
                 <div>
-                <button type="submit" class="btn btn-success">Login</button>
+                <button type="submit" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> Login</button>
                 </div>
                 <div class="container signin">
-                    <p>Already have an account? <a href="/register">Register here!</a>.</p>
+                    <p style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; color: antiquewhite;">Already have an account? <a style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; color: black;" href="/register">Register here!</a></p>
                  </div>
     
             </form>
