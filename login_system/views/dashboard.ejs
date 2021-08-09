@@ -3,20 +3,20 @@
 <form action="/route/" method="POST" class="pt-3" enctype="multipart/form-data">
     <div class="topnav" id="myTopnav">
         <a href="#home" class="active">Home</a>
-        <a href="/uploadfiles">Upload</a>
-        <a href="/showfiles">Show Files</a>
-        <a href="#about">About</a>
-        <h5 class="showemail"><%=locals.user? user:"User"%></h5>
+        <a href="/route/uploadfiles?user=<%=locals.user%>">Upload</a>
+        <a href="/showfiles?user=<%=locals.user%>">Show Files</a>
+        <a href="/route/about?user=<%=locals.user%>"">About</a>
+        <h5 class="showemail"><%=locals.user%></h5>
         <a id="logout" href="/register">Logout</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
       </div>
-<div class="text-center center-div mt-5" id="login">
+<!-- <div class="text-center center-div mt-5" id="login">
     <div class="container w-25 border py-5 mt-5">        
         <h3>Welcome to College notes</h3>
     </div>
-</div>
+</div> -->
 </form>
 
 <%-include('footer')-%>

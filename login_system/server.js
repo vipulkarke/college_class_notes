@@ -34,6 +34,7 @@ app.use(session({
     saveUninitialized: true 
 }));
 
+
 app.use('/route',router);
 
 
@@ -52,23 +53,11 @@ app.get('/register',(req,res)=>{
 
 
 app.get('/showfiles',(req,res)=>{
-    res.render('showfiles')
+    console.log(req.query);
+    const user = req.query.user;
+    res.render('showfiles', {user:user});
 })
 
-app.get('/uploadfiles',(req,res)=>{
-    res.render('uploadfiles',)
-})
-
-
-
-// app.get('/images',(req,res)=>{
-// });
-
-
-
-// app.get('/dashbaord',(req,res)=>{
-//     res.render('dashboard')
-// })
 
 
 

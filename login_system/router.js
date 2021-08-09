@@ -48,9 +48,7 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({storage})
-// router.use('/static',express.static(path.join(__dirname,'/uploads')));
 
-//router.use('/static',express.static(path.join(__dirname,'uploads')))
 router.use('/images',express.static(path.join(__dirname,'uploads/images')))
 
 console.log(__dirname)
@@ -89,6 +87,20 @@ connection.connect(function(err) {
   });
 });
 
+router.get('/uploadfiles', (req, res)=>{
+    console.log(req.query);
+    const user = req.query.user;
+    res.render('uploadfiles', {user:user});
+})
+
+
+router.get('/about', (req, res)=>{
+    console.log(req.query);
+    const user = req.query.user;
+    res.render('about', {user:user});
+})
+
+
 ////////////////////////////////////////////////////////////////// route for dashboard//////////////////////////////////////////////
 router.get('/dashboard',(req,res)=>{
  if(req.session.user){
@@ -110,32 +122,6 @@ router.post('/register',(req,res)=>{
    // });
 });
 
-
-//routeforupload
-// var storage = multer.diskStorage({
-//     destination: function(req, file,callback){
-//         var dir = "./upload";
-//         if (!fs.existsSync(dir)){
-//             fs.mkdirSync(dir);
-//         }
-//         callback(null,dir);
-//     },
-//     filename:function(req,file,callback){
-//         callback(null,file.originalname);
-//     }
-// });
-// var upload = multer({storage:storage}).array('files',20);
-// router.post('/upload',(req,res,next)=>{
-//     upload(req,res,function(err){
-//     if(err){
-//         return res.send("something went wrong ");  
-//     }
-//      res.render('uploadfiles',{user:req.session.user});
-//      alert('upload complete');    
-//  })
-// });
-
-
 ////////////////////////////////////////////////////////////////Route for showfiles///////////////////////////////////////////////
 router.post('/show',(req,res,next)=>{
     // res.render('showfiles',{user:req.session.user});
@@ -145,8 +131,8 @@ let filenames = fs.readdirSync(directory_name);
 console.log("\nFilenames in directory:");
 filenames.forEach((file) => {
         req.file
-    res.write('   <html>    <head>     </head>   <body>             <table><tr>  ' +file );
-    res.write('</tr>        </table>    </body>    </html>');
+    res.write('<html><head></head><body><table><tr>' +file );
+    res.write('</tr></table></body></html>');
     console.log("File:", file);
 });
 });
