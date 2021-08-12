@@ -4,6 +4,10 @@
 <form action="/route/showfiles" method="POST" class="pt-3" enctype="multipart/form-data">  
 <div class="text-center center-div mt-5" id="login">              
     </div> 
+    <div>
+        <h1>All files</h1>
+    </div>
+    
     <div class="images"></div>
     <script>
         const loadImages = async() => {
@@ -13,7 +17,7 @@
             response.images.forEach(image => {                
                 const img = document.createElement('img');
                 img.src= image.filePath;
-                img.height = '300';  
+                img.height = '500';  
                 var link = document.createElement('a');
                 link.href = image.filePath;
                 link.download = 'file.jpg';
