@@ -33,6 +33,7 @@ body{
   display: block;
   margin: 50px auto 10px;
     padding: .4em 2em;
+    margin-bottom: 2rem;
 }
 
 #login.title>span{
@@ -106,14 +107,13 @@ body{
 
 .input-field{
    width: 100%;
-    padding: 10px 0;
-    margin: 5px 0;
+    /* padding: 10px 0; */
+    margin: 15px 0;
     border-left: 0;
     border-top: 0;
     border-right: 0;
-    border-bottom: 1px solid #999;
-    outline: none;
-    background: transparent;
+    padding: .375rem .75rem;
+    
 }
 
 .registerbtn{
@@ -131,6 +131,9 @@ body{
     cursor: pointer;
      
 } 
+.registerDiv{
+  padding-top: 0%;
+}
 
 .registerbtn:hover
 {
@@ -143,7 +146,10 @@ background-color: hsl(152deg 69% 27%);
 }
 .registerL{
   text-align: center;
-  
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 7% 23% 3%;
 }
 
 
@@ -177,7 +183,6 @@ background-color: hsl(152deg 69% 27%);
   font-size: 2.5rem;
   font-weight: bold;
 }
-
 
 
 

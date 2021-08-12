@@ -35,13 +35,15 @@
                 <a class="nav-link" href="">Contact</a>
               </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse"  href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link" data-toggle="collapse"  href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
                 Login
             </a>
           </li>
         
           <li class="nav-item">
-            <a class="nav-link" href="">Register</a>
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Register
+            </a>
                
           </li>
         </ul>
@@ -50,9 +52,11 @@
 
   <!-- -------------------Collaps------------------------- -->
 
-  
 
-  <div class="collapse" id="collapseExample">
+  
+<!-- Login Code -->
+
+  <div class="collapse" id="collapseExample1">
     <div class="div1 card card-body" 
                     style=" padding-top: 0px;
                     padding-right: 0px;
@@ -72,18 +76,20 @@
             </div>
             <form action="/route/login" method="POST" class="pt-3" >
                 <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" name="email">
+                <input type="email" class="form-control" placeholder=" 👨🏻‍🎓 Email" name="email">
                 
                 </div>
                 <div class="from-group">
-                    <input type="password" class="form-control" placeholder="Password" name="password"> 
+                    <input type="password" class="form-control" placeholder=" 🔒 Password" name="password"> 
                    
                 </div>
                 <div>
                 <button type="submit" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> Login</button>
                 </div>
                 <div class="container signin">
-                    <p style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; color: antiquewhite;">Already have an account? <a style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; color: black;" href="/register">Register here!</a></p>
+                    <p style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; 
+                    color:antiquewhite;">Already have an account? 
+                      <a style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; color: black;" href="/register"> Register here!</a></p>
                  </div>
     
             </form>
@@ -91,6 +97,65 @@
       </div>
     </div>
   </div>
+  <!-- Login Code -->
+
+<!-- Register Code -->
+
+  <div class="collapse" id="collapseExample2">
+
+    <div class="text-center center-div registerDiv" id="register">
+      <div class="container w-25 boder py-5">
+          <div class="form-box">
+            <!-- <h2 class="font-width-bold">Register System</h2> -->
+              <!-- <span>Register for new user</span>    -->
+          
+              <form action="/route/register" method="POST" class="pt-3">
+                <div class="container">
+                  <i class="fas fa-user-edit" style="font-size: 3rem;"></i>
+                <h1 class="registerL font-width-bold">Register</h1>
+                <!-- <p>Please fill in this form to create an account.</p> -->
+
+                <span style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter;">Welcome to College ClassNotes</span>
+                
+                <!-- <label for="username" class="lable"><b>Username</b></label> -->
+                <input type="text" class="input-field form-control" placeholder="👨🏻‍🎓 Username" name="username" id="username" required>
+                
+                <!-- <label for="name" class="lable"><b>Name</b></label> -->
+                <input type="text" class="input-field form-control" placeholder="👨🏻‍🎓 Name" name="name" id="name" required>
+  
+                <!-- <label for="email" class="lable"><b>Email</b></label> -->
+                <input type="email" class="input-field form-control" placeholder="✉️ Email" name="email" id="email" required>
+            
+                <!-- <label for="psw" class="lable"><b>Password</b></label> -->
+                <input type="password" class="input-field form-control" placeholder="🔒 Password" name="rpassword" id="rpasssword" required>
+            
+                        
+                <button  type="submit" class="btn btn-success"><i class="fas fa-user-plus"></i> Register</button>
+                </div>
+            
+               <div class="container signin">
+                <p style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; 
+                color:antiquewhite;">Already have an account? <a style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; color: black;" href="/base"> Sign in!</a></p>
+               </div>
+             
+              </div>
+            
+              
+            </form>
+          </div>
+      </div>
+
+
+
+  </div>
+
+<!-- Register Code -->
+
+
+
+
+
+
 
       <!-- Title -->
       <div class="row">
