@@ -17,7 +17,10 @@
             response.images.forEach(image => {                
                 const img = document.createElement('img');
                 img.src= image.filePath;
-                img.height = '500';  
+                img.hspace = "20";
+                img.height = '650';
+                img.vspace = '20';
+                img.align = "center";
                 var link = document.createElement('a');
                 link.href = image.filePath;
                 link.download = 'file.jpg';
