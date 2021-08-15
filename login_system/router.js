@@ -61,12 +61,10 @@ router.get('/images',(req,res)=>{
 
 
 router.post('/upload', upload.array('mfiles'),(req,res)=> {
-    return res.json({status: 'OK', uploaded: req.files.length})
+    // return res.json({status: 'OK', uploaded: req.files.length})
+   res.redirect('/route/dashboard');
+   alert("fileUploaded!!");
 });
-
-
-
-
 
 ///////////////////////////////////////////////////////////////logincheck///////////////////////////////////////////////////////////
 router.post('/login',(req,res)=>{
@@ -87,20 +85,6 @@ connection.connect(function(err) {
   });
 });
 
-router.get('/uploadfiles', (req, res)=>{
-    console.log(req.query);
-    const user = req.query.user;
-    res.render('uploadfiles', {user:user});
-})
-
-
-router.get('/about', (req, res)=>{
-    console.log(req.query);
-    const user = req.query.user;
-    res.render('about', {user:user});
-})
-
-
 ////////////////////////////////////////////////////////////////// route for dashboard//////////////////////////////////////////////
 router.get('/dashboard',(req,res)=>{
  if(req.session.user){
@@ -110,22 +94,41 @@ router.get('/dashboard',(req,res)=>{
  }
 });
 
-//////////////////////////////////////////////////////////////////////route for register//////////////////////////////////////////// 
-router.post('/register',(req,res)=>{    
-        // console.log("Connected!");
+
+router.get('/',(req,res)=>{   
+        res.render('/')    
+      });
+
+router.get('/about', (req, res)=>{
+    console.log(req.query);
+      const user = req.query.user;
+      res.render('about', {user:user});
+ })
+
+
+ router.get('/uploadfiles', (req, res)=>{
+    console.log(req.query);
+    const user = req.query.user;
+    res.render('uploadfiles', {user:user});
+})
+
+//////////////////////////////////////////////////////////////////////route for register//////////////////////////////////////////
+router.post('/register',(req,res)=>{            
         console.log(req.body.username);
         var sql = "INSERT INTO users  (username,name,email,password) VALUES ('"+req.body.username+"','"+req.body.name+"','"+req.body.email+"', '"+req.body.rpassword+"')";
         connection.query(sql, function (err, result) {
-          if (err) throw err;
+          if (err) {
+          throw err;
+        }else{
+            res.redirect("/");
+           alert("New User Registered \n Welcome to college ClassNotes "); 
+        }
           console.log("1 record inserted");
         });
-   // });
 });
 
 ////////////////////////////////////////////////////////////////Route for showfiles///////////////////////////////////////////////
 router.post('/show',(req,res,next)=>{
-    // res.render('showfiles',{user:req.session.user});
-    // console.log(user.session.user);
 let directory_name = "./uploads/images";
 let filenames = fs.readdirSync(directory_name);
 console.log("\nFilenames in directory:");
@@ -136,8 +139,5 @@ filenames.forEach((file) => {
     console.log("File:", file);
 });
 });
-
-
-
 
 module.exports=router;
