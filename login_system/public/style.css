@@ -310,3 +310,9 @@ h2{
 .navLogo:hover {
     transform: rotate(360deg);
   } 
+
+
+  #dashboard-title{
+    background-color: #ff4c68;
+    color: #fff;
+  }

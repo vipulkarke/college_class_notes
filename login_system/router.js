@@ -76,7 +76,7 @@ connection.connect(function(err) {
     connection.query(sql, [email, password], function(error, results,) {
         if (results.length > 0) {
             req.session.user = email;
-            res.redirect('/route/dashboard');
+            res.redirect('/route/uploadfiles');
         } else {
             res.end('Invalid Email or Password please check.')
         }

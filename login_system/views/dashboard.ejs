@@ -1,4 +1,43 @@
 <%-include('header')-%>
+<section id="dashboard-title">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <img class="navLogo" src="/assets/finalLogo.png" alt="logo" style="width: 12%;">
+  <a class="navbar-brand" href="">College ClassNotes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+  
+  <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link " href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/route/uploadfiles?user=<%=locals.user%>">Upload</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/showfiles?user=<%=locals.user%>">Show Files</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/route/about?user=<%=locals.user%>"">About</a>
+        </li>
+        <li class="nav-item">
+          <h5 class="showemail"><%=locals.user%></h5>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="logout" href="/base">Logout</a>
+        </li>
+        
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    
+  </ul>
+</div>
+</nav>
+
+
 
 <form action="/route/" method="POST" class="pt-3" enctype="multipart/form-data">
     <div class="topnav" id="myTopnav">
@@ -19,5 +58,5 @@
     </div>
 </div>
 </form>
-
+</section>
 <%-include('footer')-%>
