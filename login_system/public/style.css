@@ -206,9 +206,9 @@ body{
   font-family: "Montserrat";
 }
 
-.navbar{
+/* .navbar{
   padding: 0 0 4.5rem;
-}
+} */
 
 .nav-item{
   padding: 0 18px;
@@ -316,3 +316,19 @@ h2{
     background-color: #ff4c68;
     color: #fff;
   }
+
+.content{
+  text-align: center;
+  color: #fff;
+  padding: 0 25%;
+}
+
+.mission{
+  font-size: 3rem;
+  color: #fff;
+}
+
+.mainbody{
+  background-color: #ff4c68;
+}
+
