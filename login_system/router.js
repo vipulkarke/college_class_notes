@@ -105,6 +105,12 @@ router.get('/about', (req, res)=>{
       res.render('about', {user:user});
  })
 
+ 
+router.get('/dash', (req, res)=>{
+    console.log(req.query);
+      const user = req.query.user;
+      res.render('dash', {user:user});
+ })
 
  router.get('/uploadfiles', (req, res)=>{
     console.log(req.query);

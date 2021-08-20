@@ -317,18 +317,96 @@ h2{
     color: #fff;
   }
 
-.content{
+.content1{
   text-align: center;
   color: #fff;
   padding: 0 25%;
 }
 
-.mission{
-  font-size: 3rem;
+.content2{
+  text-align: left;
   color: #fff;
+  padding: 0 25%;
+  margin-top: 9rem;
+}
+.content2 p{
+  margin-top: 2rem;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.2rem;
+  font-family: "Ubuntu";
+  margin-left: 2rem;
+}
+
+.about-para{
+  font-size: 2.7rem;
+  color: aliceblue;
 }
 
 .mainbody{
   background-color: #ff4c68;
 }
 
+/* image */
+.skill-row{
+  text-align: left;
+  width: 50%;
+  margin: 100px auto 200px auto  ;
+  line-height: 2;
+  color: #fff;
+}
+
+.img-tejas{
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin-bottom: 9rem;
+  display: inline-block;
+  margin-right: 5rem;
+}
+
+.img-vipul{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  float: right;
+  margin-left: 5rem;
+  margin-bottom: 9rem;
+}
+.vh{
+  display: inline-block;
+  text-align: left;
+  color: #fff;
+}
+.skill-p{
+  margin-top: rem;
+  color: #fff;
+  font-weight: 100;
+  font-size: 2.2rem;
+  font-family: "Ubuntu";
+  text-align: center;
+  
+}
+
+.content1 h1{
+  text-align: left;
+  margin-bottom: 1rem;
+  
+}
+.team{
+  background-color: #ef8172 ;
+  margin-bottom: 100px;
+}
+
+
+/* Dahboard */
+
+.dash{
+  background-image: url("/assets/bg-img.jpg");
+  height: 3000px;
+  width: 2000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
