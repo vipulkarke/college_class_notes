@@ -1,4 +1,4 @@
-<body class="mainbody">
+<body >
 <%-include('header')-%>
     
 <head>
@@ -218,17 +218,28 @@
 
   <section id="testimonials">
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" data-interval="2000" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <h2>Review 1</h2>
-    <img class= "t-img" src="images.jpg" alt="profile1">
-    <em class="imt-t">Person1</em>
+        <div class="carousel-item active" style="
+        margin-top: 50px;
+        margin-bottom: 50px;
+    ">
+          
+    <img class= "t-img" src="assets/suraj.jpeg" alt="profile1">
+    <h4 style="color: aliceblue;">"I Loved this platform. It makes 
+      it easier to share college 
+      study materials."</h4>
+    <em class="imt-t" style="color:black;">- Suraj Vishwakarma (Admin of "Unofficial Group")</em>
+    
         </div>
-        <div class="carousel-item">
-          <h2 class="testimonial-text">Review 2</h2>
-    <img class="testimonial-image t-img" src="images.jpg" alt="profile2">
-    <em class="imt-t">Person2</em>
+        <div class="carousel-item" style="
+        margin-top: 50px;
+        margin-bottom: 50px;
+    ">
+        
+          <img class= "t-img" src="assets/atharva.jpg" alt="profile1">
+          <h4 style="color: aliceblue;">"Excellent experience. Would highly recommend."</h4>
+          <em class="imt-t" style="color:black;">- Atharva Mahadik (Python Developer at "Alkalyme")</em>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

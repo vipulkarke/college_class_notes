@@ -299,8 +299,11 @@ h2{
 
 /* Press */
 #press{
-  background-color: #ef8172 ;
+  background-color: #fff#ef8172 ;
   text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+
 }
 
 .press-img{
@@ -442,7 +445,3 @@ section.switchable{
 }
 
 
-a:focus{
-  background-color: #ffffff;
-  color: white;
-}
