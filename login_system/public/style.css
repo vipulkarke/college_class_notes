@@ -216,7 +216,7 @@ body{
 
 .navbar-brand{
   font-family: "Ubuntu";
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 .nav-link{
@@ -441,7 +441,8 @@ section.switchable{
   padding: 104px 0px;
 }
 
-.top-animation{
-  height: 400px;
 
+a:focus{
+  background-color: #ffffff;
+  color: white;
 }
