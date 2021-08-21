@@ -76,9 +76,10 @@ connection.connect(function(err) {
     connection.query(sql, [email, password], function(error, results,) {
         if (results.length > 0) {
             req.session.user = email;
-            res.redirect('/route/dashboard');
+            res.redirect('/route/dash');
         } else {
-            res.end('Invalid Email or Password please check.')
+           res.render('base',{isAlert:true,user:req.session.user});
+        //    res.render('/');
         }
         res.end();
     });
@@ -98,6 +99,9 @@ router.get('/dashboard',(req,res)=>{
 router.get('/',(req,res)=>{   
         res.render('/')    
       });
+router.get('/base',(req,res)=>{   
+res.render('base')    
+});
 
 router.get('/about', (req, res)=>{
     console.log(req.query);
@@ -106,11 +110,18 @@ router.get('/about', (req, res)=>{
  })
 
  
-router.get('/dash', (req, res)=>{
-    console.log(req.query);
-      const user = req.query.user;
-      res.render('dash', {user:user});
- })
+ router.get('/dash',(req,res)=>{
+    if(req.session.user){
+        res.render('dash',{user:req.session.user});
+    }else{
+        res.send("Unauthorize User");
+    }
+   });
+// router.get('/dash', (req, res)=>{
+//     console.log(req.query);
+//       const user = req.query.user;
+//       res.render('dash', {user:user});
+//  })
 
  router.get('/uploadfiles', (req, res)=>{
     console.log(req.query);
