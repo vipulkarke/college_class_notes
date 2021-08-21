@@ -5,7 +5,7 @@ var router = express.Router();
 const multer = require('multer');
 const fs = require("fs");
 var uuid = require('uuid').v4;
-var alert = require("alert");
+// var alert = require("alert");
 const  mongoose = require('mongoose');
 const path = require("path");
 
@@ -62,8 +62,8 @@ router.get('/images',(req,res)=>{
 
 router.post('/upload', upload.array('mfiles'),(req,res)=> {
     // return res.json({status: 'OK', uploaded: req.files.length})
-   res.redirect('/route/dashboard');
-   alert("fileUploaded!!");
+   res.render('dash',{isAlert:true,user:req.session.user});
+
 });
 
 ///////////////////////////////////////////////////////////////logincheck///////////////////////////////////////////////////////////
