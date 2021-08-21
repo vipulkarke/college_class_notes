@@ -103,11 +103,17 @@ router.get('/base',(req,res)=>{
 res.render('base')    
 });
 
+router.get('/contact',(req,res)=>{   
+    res.render('contact')    
+    });
+
 router.get('/about', (req, res)=>{
     console.log(req.query);
       const user = req.query.user;
       res.render('about', {user:user});
  })
+
+
 
  
  router.get('/dash',(req,res)=>{

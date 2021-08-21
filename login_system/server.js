@@ -52,6 +52,11 @@ app.get('/register',(req,res)=>{
 })
 
 
+app.get('/contact',(req,res)=>{   
+    res.render('contact')    
+    });
+
+
 app.get('/showfiles',(req,res)=>{
     console.log(req.query);
     const user = req.query.user;
