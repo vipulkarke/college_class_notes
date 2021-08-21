@@ -246,6 +246,11 @@ h3{
   font-size: 3rem;
   
 }
+
+#features{
+  background-color: #ffffff;
+}
+
 #features .row{
   margin: 2rem 10rem;
 }
@@ -349,11 +354,20 @@ h2{
 
 /* image */
 .skill-row{
+  
+  border: 10px;
   text-align: left;
   width: 50%;
   margin: 100px auto 200px auto  ;
   line-height: 2;
   color: #fff;
+
+}
+.skill-rowd{ 
+ display: flex;
+ width: 50%;
+ margin-right: auto;
+
 }
 
 .img-tejas{
@@ -375,8 +389,8 @@ h2{
   margin-bottom: 9rem;
 }
 .vh{
-  display: inline-block;
-  text-align: left;
+  /* display: inline-block; */
+  /* text-align: left; */
   color: #fff;
 }
 .skill-p{
@@ -402,11 +416,32 @@ h2{
 
 /* Dahboard */
 
-.dash{
+.dashpg{
   background-image: url("/assets/bg-img.jpg");
   height: 3000px;
-  width: 2000px;
+  width: auto;
+  opacity: 70%;
+  background-color: #fff;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.short {
+  width: 3em;
+  border-color: #4a90e2;
+   align-self: flex-start;
+}
+
+section.bg--secondary{
+  padding: 104px 0px;
+}
+
+section.switchable{
+  padding: 104px 0px;
+}
+
+.top-animation{
+  height: 400px;
+
 }
