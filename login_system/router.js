@@ -144,10 +144,24 @@ router.post('/register',(req,res)=>{
           throw err;
         }else{
             res.redirect("/");
-           alert("New User Registered \n Welcome to college ClassNotes "); 
+        //    alert("New User Registered \n Welcome to college ClassNotes "); 
         }
           console.log("1 record inserted");
         });
+});
+////////////////////////////////////////////////////////////////Route for contact///////////////////////////////////////////////
+
+router.post('/contact',(req,res)=>{            
+    var sql = "INSERT INTO feedback  (name,phoneno,email,comments) VALUES ('"+req.body.Name+"','"+req.body.PhoneNumber+"','"+req.body.FromEmailAddress+"', '"+req.body.Comments+"')";
+    connection.query(sql, function (err, result) {
+      if (err) {
+      throw err;
+    }else{
+        // res.render('contact',{isAlert:true});
+    //    alert("Thank you for using College ClassNotes "); 
+       console.log("1 record inserted");
+    }
+    });
 });
 
 ////////////////////////////////////////////////////////////////Route for showfiles///////////////////////////////////////////////

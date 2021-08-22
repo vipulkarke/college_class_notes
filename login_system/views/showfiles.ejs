@@ -1,51 +1,59 @@
 <body>
-<%-include('header')-%>
-<%-include('dashboard')-%>
+  <%-include('header')-%>
+ <%-include('dashboard')-%>
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff4c68" fill-opacity="1" d="M0,32L40,32C80,32,160,32,240,48C320,64,400,96,480,96C560,96,640,64,720,42.7C800,21,880,11,960,42.7C1040,75,1120,149,1200,165.3C1280,181,1360,139,1400,117.3L1440,96L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+ 
+  <section class="article-container text-center" data-stats-ve="35">
+    <h1 style="color: #ff4c68;">The Notes you require are one click away!</h1>
+    <div class="inline-feedback__container">
+      <div class="article-content-container">
+        <div class="cc">
+          <!-- <p data-outlined="false" class="">
+            The Notes you require are one click away!
+          </p> -->
+          <div class="no-margin">   
+                <h4>Click on any notes to download</h4>  
+          </div>
 
-<div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff4c68" fill-opacity="1" d="M0,32L40,32C80,32,160,32,240,48C320,64,400,96,480,96C560,96,640,64,720,42.7C800,21,880,11,960,42.7C1040,75,1120,149,1200,165.3C1280,181,1360,139,1400,117.3L1440,96L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-</div>
-
-<form action="/route/showfiles" method="POST" class="pt-3" enctype="multipart/form-data">  
-<!-- <div class="text-center center-div mt-5" id="login">              
-    </div>  -->
-    <div>
-        <h1>All files</h1>
+        </div>
+      </div>
+      
+      
+      </div>
     </div>
-    
+  </section>
+
     <div class="images"></div>
     <script>
-        const loadImages = async() => {
-            const response = await fetch('http://localhost:3000/route/images').then(response => response.json());
-            const imagesElement = document.querySelector('.images');
-            imagesElement.innerHTML = '';
-            response.images.forEach(image => {                
-                const img = document.createElement('img');
-                img.src= image.filePath;
-                img.hspace = "20";
-                img.height = '650';
-                img.vspace = '20';
-                img.align = "center";
-                var link = document.createElement('a');
-                link.href = image.filePath;
-                link.download = 'file.jpg';
-                console.log(img);
-                img.onclick= () => {
-                    
-                    link.click();
-                }
-                document.body.appendChild(link);
-                document.body.removeChild(link);              
-                imagesElement.appendChild(img);
-                                     
-            });
-        };
-        console.log(loadImages);
-        window.onload = loadImages;
-    </script>    
-    
+      const loadImages = async () => {
+        const response = await fetch("http://localhost:3000/route/images").then(
+          (response) => response.json()
+        );
+        const imagesElement = document.querySelector(".images");
+        imagesElement.innerHTML = "";
+        response.images.forEach((image) => {
+          const img = document.createElement("img");
+          img.src = image.filePath;
+          img.hspace = "20";
+          img.height = "650";
+          img.vspace = "20";
+          img.align = "center";
+          var link = document.createElement("a");
+          link.href = image.filePath;
+          link.download = "file.jpg";
+          console.log(img);
+          img.onclick = () => {
+            link.click();
+          };
+          document.body.appendChild(link);
+          document.body.removeChild(link);
+          imagesElement.appendChild(img);
+        });
+      };
+      console.log(loadImages);
+      window.onload = loadImages;
+    </script>
+  </form>
 
-</form>
-
-
-<%-include('footer')-%>
+  <%-include('footer')-%>
+</body>

@@ -1,6 +1,11 @@
 <body>
+
     <%-include('header')-%>
     <%-include('dashboard')-%>
+<!-- this is addon nav bar -->
+
+
+
     <div class="">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff4c68" fill-opacity="1" d="M0,256L60,224C120,192,240,128,360,112C480,96,600,128,720,122.7C840,117,960,75,1080,69.3C1200,64,1320,96,1380,112L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>  
         </div>
@@ -9,7 +14,7 @@
             <h1 style="margin-bottom: 3rem;">Help us to improve <br><strong style="color: #ff4c68; "> College ClassNotes.</strong></h1>
 
 
-        <form action="//submit.form" id="ContactUs100" method="post" onsubmit="return ValidateForm(this);">
+        <form action="/route/contact" id="ContactUs100" method="post" onsubmit="  return ValidateForm(this); alert('Feedback registered');  ">
         <script type="text/javascript">
         function ValidateForm(frm) {
         if (frm.Name.value == "") { alert('Name is required.'); frm.Name.focus(); return false; }
@@ -25,7 +30,7 @@
         </td> <td>
         <input name="Name" type="text" maxlength="60" style="width:100%;max-width:250px;" />
         </td> </tr> <tr> <td>
-        <label for="PhoneNumber">Phone number:</label>
+        <label for="PhoneNumber">Phone number*:</label>
         </td> <td>
         <input name="PhoneNumber" type="text" maxlength="43" style="width:100%;max-width:250px;" />
         </td> </tr> <tr> <td>
