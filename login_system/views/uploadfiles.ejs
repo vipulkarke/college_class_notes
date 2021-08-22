@@ -32,12 +32,13 @@
 
 
         <div class="upload text-center " id="login">
-            <input type="file" name="mfiles" multiple />
-            <button type="submit" class="btn-upload " >Upload</button>
-        
+            <div class="input-group inner-upload">
+            <input type="file" class="form-control"  aria-describedby="inputGroupFileAddon04"  name="mfiles" multiple />
+            <button type="submit" class="btn-upload btn btn-outline-secondary " >Upload</button>
+            </div>
         </div>
         </form>
+        
 </div>
-
 
 <%-include('footer')-%>

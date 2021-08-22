@@ -184,7 +184,10 @@ background-color: hsl(152deg 69% 27%);
   font-weight: bold;
   width: 100%;
   margin: 0 auto;
-
+  
+}
+.inner-upload{
+  padding: 0 1rem;
 }
 
 .upload{
@@ -344,12 +347,15 @@ h2{
   color: #fff;
   padding: 0 25%;
 }
+.content1 p{
+}
 
 .content2{
   text-align: left;
   color: #fff;
   padding: 0 25%;
   margin-top: 9rem;
+  margin-bottom: 6rem;
 }
 .content2 p{
   margin-top: 2rem;
@@ -380,6 +386,20 @@ h2{
   color: #fff;
 
 }
+
+.skill-row h3{
+  margin-top: 5rem;
+  color: black;
+}
+  .skill-row p{
+    color: white;
+  }
+
+  .skill-rowd p{
+    color: white;
+  }
+
+
 .skill-rowd{ 
  display: flex;
  width: 50%;
@@ -459,3 +479,19 @@ section.switchable{
 }
 
 
+.yt-video{
+  padding: 0 25%;
+  background-color: #ff4c68;
+  padding-bottom: 9rem;
+}
+
+.yt-video h1{
+  color: white;
+  margin: 5rem 0;
+  padding-top: 5rem;
+}
+
+.contact-us{
+  margin-left:50% ;
+  margin-bottom: 10rem;
+}
