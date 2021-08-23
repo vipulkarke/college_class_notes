@@ -56,6 +56,18 @@ app.get('/contact',(req,res)=>{
     res.render('contact')    
     });
 
+app.get('/about',(req,res)=>{   
+ res.render('about')    
+      });
+
+      app.get('/aboutus',(req,res)=>{   
+        res.render('aboutus')    
+             });
+
+ app.get('/contact1',(req,res)=>{   
+ res.render('contact1')    
+       });
+
 
 app.get('/showfiles',(req,res)=>{
     console.log(req.query);

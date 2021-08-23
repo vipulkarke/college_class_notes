@@ -107,6 +107,14 @@ router.get('/contact',(req,res)=>{
     res.render('contact')    
     });
 
+router.get('/contact1',(req,res)=>{   
+    res.render('contact1')    
+    });    
+
+router.get('/aboutus',(req,res)=>{   
+    res.render('aboutus')    
+    });
+
 router.get('/about', (req, res)=>{
     console.log(req.query);
       const user = req.query.user;
