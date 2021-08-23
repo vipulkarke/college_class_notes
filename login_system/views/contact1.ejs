@@ -1,0 +1,234 @@
+<body>
+    <%-include('header')-%>
+ 
+
+    <head>
+        <meta charset="utf-8">
+        <title>TinDog</title>
+        
+        
+      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        
+        <link rel="stylesheet" href="css/styles.css">
+      
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+      
+      
+        <script src="https://kit.fontawesome.com/4b8a73297e.js" crossorigin="anonymous"></script>
+      </head>
+
+
+    <section id="title">
+        <div class="container-fluid" style="padding-top: 0;">
+          <!-- Nav Bar -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <img class="navLogo" src="assets/finalLogo.png" alt="" style="width: 12%;">
+            <a class="navbar-brand" href="/base">College ClassNotes </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/aboutus">About</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact1">Contact</a>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse"  href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Login
+                </a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Register
+                </a>
+                   
+              </li>
+            </ul>
+          </div>
+          </nav>
+    
+      <!-- -------------------Collaps------------------------- -->
+    
+    
+      
+    <!-- Login Code -->
+    
+      <div class="collapse" id="collapseExample1">
+        <div class="div1 card card-body" 
+                        style=" padding-top: 0px;
+                        padding-right: 0px;
+                        padding-bottom: 0px;
+                        padding-left: 0px;
+                        border-left-width: 0px;
+                        border-right-width: 0px;
+                        border-top-width: 0px;
+                        border-bottom-width: 0px;"> 
+    
+          <div class="div2 text-center center-div" id="login">
+            <div class="container w-25 boder py-5">
+                <div class="title">
+                  <i class="far fa-user " style="font-size: 3rem;"></i>
+                    <h2 class="font-width-bold login">Login</h2>
+                    <span style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter;">Welcome to College ClassNotes</span>   
+                </div>
+                <form action="/route/login" method="POST" class="pt-3" >
+                    <div class="form-group">
+                    <input type="email" class="form-control" placeholder=" 👨🏻‍🎓 Email" name="email">
+                    
+                    </div>
+                    <div class="from-group">
+                        <input type="password" class="form-control" placeholder=" 🔒 Password" name="password"> 
+                       
+                    </div>
+                    <div>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    </div>
+                    <div class="container signin">
+                        <p style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; 
+                        color:antiquewhite;">New to College ClassNotes? 
+                          <a style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; color: black;" href="/register">  Register here!</a></p>
+                     </div>
+        
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <script type="text/javascript">
+        var isAlert = <%=locals.isAlert%>;
+        console.log("hii",isAlert);
+        if(isAlert){
+          alert("Invalid Username or Password")
+        }   
+        // var  checklogin = <%=locals.user%>;
+        // $(document).ready(function(){
+        //            if(checklogin==null){
+        //                     document.getElementById("logout").style.visibility = "hidden"; 
+        //                 }else{
+        //                     document.getElementById("logout").style.visibility = "visible";
+                            
+        //                 }
+                   
+        //         });
+    
+    
+     </script>
+      <!-- Login Code -->
+    
+    <!-- Register Code -->
+    
+      <div class="collapse" id="collapseExample2">
+    
+        <div class="text-center center-div registerDiv" id="register">
+          <div class="container w-25 boder py-5">
+              <div class="form-box">
+                <!-- <h2 class="font-width-bold">Register System</h2> -->
+                  <!-- <span>Register for new user</span>    -->
+              
+                  <form action="/route/register" method="POST" class="pt-3" onsubmit="alert('User Registerd Sucessfully')">
+                    <div class="container">
+                      <i class="fas fa-user-edit" style="font-size: 3rem;"></i>
+                    <h1 class="registerL font-width-bold">Register</h1>
+                    <!-- <p>Please fill in this form to create an account.</p> -->
+    
+                    <span style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter;">Welcome to College ClassNotes</span>
+                    
+                    <!-- <label for="username" class="lable"><b>Username</b></label> -->
+                    <input type="text" class="input-field form-control" placeholder="👨🏻‍🎓 Username" name="username" id="username" required>
+                    
+                    <!-- <label for="name" class="lable"><b>Name</b></label> -->
+                    <input type="text" class="input-field form-control" placeholder="👨🏻‍🎓 Name" name="name" id="name" required>
+      
+                    <!-- <label for="email" class="lable"><b>Email</b></label> -->
+                    <input type="email" class="input-field form-control" placeholder="✉️ Email" name="email" id="email" required>
+                
+                    <!-- <label for="psw" class="lable"><b>Password</b></label> -->
+                    <input type="password" class="input-field form-control" placeholder="🔒 Password" name="rpassword" id="rpasssword" required>
+                
+                            
+                    <button  type="submit"   class="btn btn-success"> <i class="fas fa-user-plus"></i> Register</button>
+                   
+    
+                    </div>
+                
+                   <div class="container signin">
+                    <p style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; 
+                    color:antiquewhite;">Already have an account? <a style="font-family: Ubuntu ; font-size: 1rem; font-weight:lighter; color: black;" href="/base">  Sign in!</a></p>
+                   </div>
+                 
+                  </div>
+                
+                  
+                </form>
+              </div>
+          </div>
+    
+    
+    
+      </div>
+    
+    <!-- Register Code -->
+          <!-- Title -->
+          <div class="row">
+           
+           
+          </div>
+        </div>
+      </section>
+
+      <div class="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff4c68" fill-opacity="1" d="M0,256L60,224C120,192,240,128,360,112C480,96,600,128,720,122.7C840,117,960,75,1080,69.3C1200,64,1320,96,1380,112L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>  
+        </div>
+        <div class="contact-us">
+
+            <h1 style="margin-bottom: 3rem;">Help us to improve <br><strong style="color: #ff4c68; "> College ClassNotes.</strong></h1>
+
+
+        <form action="/route/contact" id="ContactUs100" method="post" onsubmit="  return ValidateForm(this); alert('Feedback registered');  ">
+        <script type="text/javascript">
+        function ValidateForm(frm) {
+        if (frm.Name.value == "") { alert('Name is required.'); frm.Name.focus(); return false; }
+        if (frm.FromEmailAddress.value == "") { alert('Email address is required.'); frm.FromEmailAddress.focus(); return false; }
+        if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.FromEmailAddress.focus(); return false; }
+        if (frm.Comments.value == "") { alert('Please enter comments or questions.'); frm.Comments.focus(); return false; }
+        return true; }
+        </script>
+
+        <table style="width:100%;max-width:550px;border:0;" cellpadding="8" cellspacing="0">
+        <tr> <td>
+        <label for="Name">Name*:</label>
+        </td> <td>
+        <input name="Name" type="text" maxlength="60" style="width:100%;max-width:250px;" />
+        </td> </tr> <tr> <td>
+        <label for="PhoneNumber">Phone number*:</label>
+        </td> <td>
+        <input name="PhoneNumber" type="text" maxlength="43" style="width:100%;max-width:250px;" />
+        </td> </tr> <tr> <td>
+        <label for="FromEmailAddress">Email address*:</label>
+        </td> <td>
+        <input name="FromEmailAddress" type="text" maxlength="90" style="width:100%;max-width:250px;" />
+        </td> </tr> <tr> <td>
+        <label for="Comments">Comments*:</label>
+        </td> <td>
+        <textarea name="Comments" rows="7" cols="40" style="width:100%;max-width:350px;"></textarea>
+        </td> </tr> <tr> <td>
+        
+        </td> <td>
+        
+        <input class="btn btn-outline-secondary" name="skip_Submit" type="submit" value="Submit" />
+        
+        </td> </tr>
+        </table>
+        </form>
+        </div>
+    <%-include('footer')-%> 
