@@ -62,7 +62,7 @@ router.get('/images',(req,res)=>{
 
 router.post('/upload', upload.array('mfiles'),(req,res)=> {
     // return res.json({status: 'OK', uploaded: req.files.length})
-   res.render('dash',{isAlert:true,user:req.session.user});
+   res.render('dash',{user:req.session.user});
 
 });
 
@@ -184,5 +184,4 @@ filenames.forEach((file) => {
     console.log("File:", file);
 });
 });
-
 module.exports=router;
