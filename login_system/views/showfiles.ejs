@@ -12,7 +12,7 @@
             The Notes you require are one click away!
           </p> -->
           <div class="no-margin">   
-                <h4>Click on any notes to download</h4>  
+                <h4 style="padding-bottom: 5rem;">Click on any notes to download</h4>  
           </div>
 
         </div>
@@ -23,7 +23,7 @@
     </div>
   </section>
 
-    <div class="images"></div>
+    <div class="images showimages" ></div>
     <script>
       const loadImages = async () => {
         const response = await fetch("http://localhost:3000/route/images").then(
@@ -35,7 +35,7 @@
           const img = document.createElement("img");
           img.src = image.filePath;
           img.hspace = "20";
-          img.height = "650";
+          img.height = "575";
           img.vspace = "20";
           img.align = "center";
           var link = document.createElement("a");
